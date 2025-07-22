@@ -30,4 +30,5 @@ router.delete('/:id', auth, async (req, res) => {
   res.json({ msg: 'Task deleted' });
 });
 
-module.exports = router;
+export default router;
+

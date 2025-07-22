@@ -1,11 +1,13 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const PORT = process.env.PORT || 5000;
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
 require('dotenv').config();
 
-const authRoutes = require('./routes/auth');
-const taskRoutes = require('./routes/task');
+import authRoutes from './routes/auth.js';
+import taskRoutes from './routes/tasks.js';
+
 
 const app = express();
 app.use(express.json());
