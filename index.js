@@ -17,9 +17,13 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: '*',
-  credentials: true
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }));
+app.options('*', cors());
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
